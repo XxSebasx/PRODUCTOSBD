@@ -6,6 +6,57 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <h1>Product Management</h1>
+
+    <h2>Marks</h2>
+
+    <form id="addFormM">
+        <input type="text" id="nameMark" placeholder="nameMark" required>
+        <input type="text" id="CIF" placeholder="CIF" required>
+        <input type="text" id="country" placeholder="country" required>
+        <button type="submit">Add</button>
+    </form>
+
+    <input type="text" id="CIFSearch" placeholder="CIF">
+    <button id="viewMarks">view Mark</button>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Name Mark</th>
+                <th>CIF</th>
+                <th>Country</th>
+            </tr>
+        </thead>
+        <tbody id="markTableBody">
+            
+        </tbody>
+    </table>
+
+    <h2>Products</h2>
+
+    <form id="addFormP">
+        <input type="text" id="name" placeholder="name" required>
+        <input type="text" id="price" placeholder="price" required>
+        <input type="text" id="category" placeholder="category" required>
+        <input type="text" id="mark" placeholder="mark" required>
+        <button type="submit">Add</button>
+    </form>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Category</th>
+                <th>Mark</th>
+            </tr>
+        </thead>
+        <tbody id="productTableBody">
+           
+        </tbody>
+    </table>
+
+    <script src="script.js"></script>
 </body>
 </html>

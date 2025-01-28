@@ -10,7 +10,7 @@ router.delete("/products/:id", shopRoutes.deleteProduct);
 
 //Marca
 router.post("/marks", shopRoutes.addMark);
-router.get("/mark/:id", shopRoutes.getMark);
-router.delete("/mark/:id", shopRoutes.deleteMark);
+router.get("/mark/:CIF", shopRoutes.getMark);
+router.delete("/mark/:CIF", shopRoutes.deleteMark);
 
 module.exports = router;

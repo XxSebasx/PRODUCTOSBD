@@ -1,6 +1,6 @@
 const { Sequelize, DataTypes } = require('sequelize');
 const sequelize = require('../config/database');
-const mark = require('./mark');
+const mark = require('./mark'); 
 
 const product = sequelize.define('product', {
     id: {
@@ -16,19 +16,21 @@ const product = sequelize.define('product', {
         type: DataTypes.DECIMAL,
         allowNull: false
     },
-    Category: {
+    category: {
         type: DataTypes.STRING,
         allowNull: false
     },
-    markName:{
+    markName: {
         type: DataTypes.STRING,
         references: {
-            model: 'mark',
-            key: 'name'
+            model: 'marks', 
+            key: 'markName'  
         },
         allowNull: false
     }
 });
 
+
 product.belongsTo(mark, { foreignKey: 'markName' });
+
 module.exports = product;

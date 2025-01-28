@@ -6,7 +6,7 @@ const mark = sequelize.define('mark', {
         type: DataTypes.STRING,
         primaryKey: true
     },
-    markName: {
+    markName: {  
         type: DataTypes.STRING,
         unique: true,
         allowNull: false
@@ -15,5 +15,8 @@ const mark = sequelize.define('mark', {
         type: DataTypes.STRING,
         allowNull: false
     }
+}, {
+    tableName: 'marks'  
 });
+
 module.exports = mark;
