@@ -23,8 +23,10 @@ module.exports = {
     },
 
     deleteMark: async (req,res) => {
+        console.log(req.params.markName)
+        const elimnateProduct = await product.destroy({where:{mark:req.params.markName}})
         const elimatedMark = await mark.destroy({where:req.params});
-        res.json(elimatedMark);
+        res.json(elimatedMark, elimnateProduct);
     },
 
     addMark: async (req,res) => {
@@ -33,8 +35,10 @@ module.exports = {
     },
 
     getMark: async (req,res) => {
-        const mark = await mark.findByPk(req.params.id);
-        res.json(mark);
+        const findMark = await mark.findByPk(req.params.CIF);
+        console.log(findMark.toJSON())
+        res.json(findMark.toJSON());
+
     },
 
     deleteMark: async (req,res) => {

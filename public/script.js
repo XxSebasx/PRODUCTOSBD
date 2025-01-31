@@ -1,7 +1,8 @@
 
 document.getElementById("addFormP").addEventListener("submit", addProduct)
 document.getElementById("addFormM").addEventListener("submit", addMark)
-document.getElementById("viewMarks").addEventListener("click", getMark)
+document.getElementById("viewMark").addEventListener("click", getMark)
+document.getElementById("deleteMark").addEventListener("click", deleteMark)
 
 async function addProduct(e) {
     e.preventDefault();
@@ -62,4 +63,21 @@ async function getMark() {
     const CIF = document.getElementById("CIFSearch").value;
     const response = await fetch(`/mark/${CIF}`);
     const mark = await response.json();
+
+    let tabla = document.getElementById("markTableBody");
+    tabla.innerHTML = `<tr><td>${mark.CIF}</td><td>${mark.markName}</td><td>${mark.country}</td></tr>`;
+    
 }
+
+async function deleteMark() {
+    const CIF = document.getElementById("CIFSearch").value;
+    console.log(CIF)
+    const response = await fetch(`/mark/${CIF}`, { method: "DELETE" });
+    const mark = await response.json();
+    if(mark){
+        alert("Marca eliminada correctamente");
+    }
+}
+
+
+

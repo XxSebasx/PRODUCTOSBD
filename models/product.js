@@ -22,15 +22,8 @@ const product = sequelize.define('product', {
     },
     markName: {
         type: DataTypes.STRING,
-        references: {
-            model: 'marks', 
-            key: 'markName'  
-        },
         allowNull: false
     }
 });
-
-
-product.belongsTo(mark, { foreignKey: 'markName' });
 
 module.exports = product;
